@@ -1,0 +1,15 @@
+.paste2vrchat {
+  width: 128px;
+  height: 32px;
+  line-height: 32px;
+  padding-left: 1rem;
+  font-size: 14px;
+  text-align: center;
+  display: block;
+  color: var(--yt-spec-text-primary);
+  background-color: var(--yt-spec-brand-background-primary);
+  font-weight: 700;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
