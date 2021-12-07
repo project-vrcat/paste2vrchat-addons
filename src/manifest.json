@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Paste2VRChat Addons",
+  "version": "0.1.0",
+  "description": "Paste2VRChat的配套扩展",
+  "browser_action": { "default_title": "Paste to VRChat" },
+  "homepage_url": "https://github.com/project-vrcat/paste2vrchat",
+  "options_ui": {
+    "page": "options/index.html",
+    "open_in_tab": true,
+    "chrome_style": false
+  },
+  "background": { "scripts": ["js/background.js"] },
+  "icons": {
+    "16": "images/Paste2VRChat16.png",
+    "32": "images/Paste2VRChat32.png",
+    "48": "images/Paste2VRChat48.png",
+    "128": "images/Paste2VRChat128.png"
+  },
+  "permissions": ["storage", "activeTab"]
+}
