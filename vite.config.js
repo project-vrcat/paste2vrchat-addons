@@ -9,7 +9,7 @@ export default defineConfig({
   root: "src",
   base: "/",
   build: {
-    outDir: resolve(__dirname, "dist"),
+    outDir: resolve(__dirname, "extension"),
     // https://developer.chrome.com/docs/webstore/program_policies/#:~:text=Code%20Readability%20Requirements
     terserOptions: {
       mangle: false,
@@ -33,8 +33,8 @@ export default defineConfig({
   plugins: [
     copy({
       targets: [
-        { src: "images", dest: "dist" },
-        { src: "src/manifest.json", dest: "dist" },
+        { src: "images", dest: "extension" },
+        { src: "src/manifest.json", dest: "extension" },
       ],
       hook: "writeBundle",
     }),

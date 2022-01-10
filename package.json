@@ -14,12 +14,14 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "pack:zip": "cd extension && jszip-cli add . -o ../extension.zip"
   },
   "dependencies": {
     "vue": "^3.2.24"
   },
   "devDependencies": {
+    "@ffflorian/jszip-cli": "^3.1.6",
     "@types/chrome": "^0.0.168",
     "@types/node": "^16.11.11",
     "@vitejs/plugin-vue": "^1.10.1",
