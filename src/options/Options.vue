@@ -11,21 +11,7 @@
             class="border border-gray-400 rounded py-1 px-3 w-10 align-middle"
             id="pause-all-video"
           />
-          <label for="pause-all-video" class="align-middle select-none">
-            Pause all videos
-          </label>
-        </div>
-
-        <div class="mt-5 text-center">
-          <button
-            bg="blue-400 hover:blue-500 dark:blue-500 dark:hover:blue-600"
-            text="white"
-            p="y-2 x-4"
-            border="rounded"
-            @click="saveOptions"
-          >
-            Save
-          </button>
+          <label for="pause-all-video" class="align-middle select-none">Pause all videos</label>
         </div>
       </div>
     </div>
@@ -33,17 +19,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, watch } from "vue";
 
 const pauseAllVideo = ref(false);
 
-chrome.storage.local.get(["pauseAllVideo"], (res) => {
-  pauseAllVideo.value = res.pauseAllVideo === "true";
+watch(pauseAllVideo, (newValue) => {
+  chrome.storage.local.set({ pauseAllVideo: newValue ? "true" : "false" });
 });
 
-const saveOptions = ref(() => {
-  chrome.storage.local.set({
-    pauseAllVideo: pauseAllVideo.value ? "true" : "false",
-  });
+chrome.storage.local.get(["pauseAllVideo"], (res) => {
+  pauseAllVideo.value = res.pauseAllVideo === "true";
 });
 </script>
