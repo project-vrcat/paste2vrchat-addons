@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@ffflorian/jszip-cli": "^3.1.6",
-    "@types/chrome": "^0.0.168",
+    "@types/chrome": "^0.0.177",
     "@types/node": "^16.11.11",
     "@vitejs/plugin-vue": "^1.10.1",
     "rollup-plugin-copy": "^3.4.0",
