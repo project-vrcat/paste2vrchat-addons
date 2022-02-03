@@ -6,6 +6,16 @@
 
         <div class="font-bold mt-5 text-center">
           <input
+            v-model="pressEnter"
+            type="checkbox"
+            class="border border-gray-400 rounded py-1 px-3 w-10 align-middle"
+            id="press-enter"
+          />
+          <label for="press-enter" class="align-middle select-none">Press Enter</label>
+        </div>
+
+        <div class="font-bold mt-5 text-center">
+          <input
             v-model="pauseAllVideo"
             type="checkbox"
             class="border border-gray-400 rounded py-1 px-3 w-10 align-middle"
@@ -22,12 +32,17 @@
 import { ref, watch } from "vue";
 
 const pauseAllVideo = ref(false);
+const pressEnter = ref(false);
 
 watch(pauseAllVideo, (newValue) => {
   chrome.storage.local.set({ pauseAllVideo: newValue ? "true" : "false" });
 });
+watch(pressEnter, (newValue) => {
+  chrome.storage.local.set({ pressEnter: newValue ? "true" : "false" });
+});
 
-chrome.storage.local.get(["pauseAllVideo"], (res) => {
+chrome.storage.local.get(["pauseAllVideo", "pressEnter"], (res) => {
   pauseAllVideo.value = res.pauseAllVideo === "true";
+  pressEnter.value = res.pressEnter === "true";
 });
 </script>

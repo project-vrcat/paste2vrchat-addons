@@ -18,7 +18,7 @@
     "pack:zip": "cd extension && jszip-cli add . -o ../extension.zip"
   },
   "dependencies": {
-    "vue": "^3.2.24"
+    "vue": "^3.2.29"
   },
   "devDependencies": {
     "@ffflorian/jszip-cli": "^3.1.6",
